@@ -3,7 +3,7 @@
 export default function Home() {
   return (
     <div>
-      GOING TO START PROJECT! ✨
+      سلام خوبی؟
     </div>
   )
 }

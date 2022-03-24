@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'iransans';
+  src:  url('../utils/fonts/FontsFree-Net-ir_sans.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -11,4 +18,5 @@ html {
 
 body {
   font-size: 1.4rem;
+  font-family: 'iransans';
 }
