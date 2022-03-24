@@ -1,14 +1,25 @@
 @font-face {
-  font-family: 'iransans';
-  src:  url('../utils/fonts/FontsFree-Net-ir_sans.ttf') format('truetype');
+  font-family: "iransans";
+  src: url("../utils/fonts/FontsFree-Net-ir_sans.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
+}
+
+:root {
+  /* Color */
+  --navy-color: rgb(0, 4, 53, 0.8);
+  --lite-silver-color: rgb(233, 233, 233);
+  --dark-gray-color: rgb(114, 114, 114);
+  --lite-black-color: #3f3f3f;
+  /* Sizes */
+  --padding-small-size: 1rem
 }
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  border: none
 }
 
 html {
@@ -18,5 +29,37 @@ html {
 
 body {
   font-size: 1.4rem;
-  font-family: 'iransans';
+  font-family: "iransans";
+}
+
+header {
+  width: 100%;
+  background: var(--navy-color);
+  color: whitesmoke;
+  padding: var(--padding-small-size);
+  display:flex;
+  justify-content: space-between;
+}
+
+.login-btn{
+  background: none;
+  color: whitesmoke;
+  font-family: "iransans";
+}
+
+footer {
+  width: 100%;
+  background: var(--lite-silver-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--padding-small-size);
+  color: var(--dark-gray-color);
+  text-align: center;
+}
+
+.homepage {
+  min-height: 100vh;
+  color: var(--lite-black-color);
 }
