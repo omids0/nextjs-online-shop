@@ -8,9 +8,10 @@
 :root {
   /* Color */
   --navy-color: rgb(0, 4, 53, 0.8);
-  --lite-silver-color: rgb(233, 233, 233);
+  --lite-silver-color: rgb(243, 243, 243);
   --dark-gray-color: rgb(114, 114, 114);
   --lite-black-color: #3f3f3f;
+  --plum-color: #DDA0DD;
   /* Sizes */
   --padding-small-size: 1rem;
 }
@@ -43,11 +44,23 @@ body {
 
 header {
   width: 100%;
-  background: var(--navy-color);
+  display: flex;
+  flex-direction: column;
+}
+.header-first-section {
+  background: var(--plum-color);
   color: whitesmoke;
-  padding: var(--padding-small-size);
+  width: 100%;
   display: flex;
   justify-content: space-between;
+  padding: var(--padding-small-size);
+}
+.header-second-section{
+  display: flex;
+  justify-content: space-between;
+  padding: var(--padding-small-size);
+  background: var(--lite-silver-color);
+  border-bottom: .1px solid rgba(192, 192, 192, 0.3)
 }
 
 .login-btn {
