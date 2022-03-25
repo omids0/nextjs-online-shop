@@ -11,7 +11,7 @@ export default function AppLayout({ title, description, children }) {
         {description && <meta name="description" content={description}></meta>}
       </Head>
       <Header />
-      {children}
+      <div className="children">{children}</div>
       <Footer />
     </div>
   );

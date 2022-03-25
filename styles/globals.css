@@ -12,14 +12,14 @@
   --dark-gray-color: rgb(114, 114, 114);
   --lite-black-color: #3f3f3f;
   /* Sizes */
-  --padding-small-size: 1rem
+  --padding-small-size: 1rem;
 }
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  border: none
+  border: none;
 }
 
 html {
@@ -32,16 +32,25 @@ body {
   font-family: "iransans";
 }
 
+.children {
+  min-height: 100vh;
+}
+
+.btn {
+  background: none;
+  font-family: "iransans";
+}
+
 header {
   width: 100%;
   background: var(--navy-color);
   color: whitesmoke;
   padding: var(--padding-small-size);
-  display:flex;
+  display: flex;
   justify-content: space-between;
 }
 
-.login-btn{
+.login-btn {
   background: none;
   color: whitesmoke;
   font-family: "iransans";
@@ -60,6 +69,42 @@ footer {
 }
 
 .homepage {
-  min-height: 100vh;
   color: var(--lite-black-color);
+  padding: var(--padding-small-size);
+}
+
+.admin-navbar-board {
+  display: flex;
+  overflow: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.admin-navbar-board::-webkit-scrollbar {
+  display: none;
+}
+
+.admin-nav {
+  min-width: 15rem;
+  width: 25%;
+  background: var(--lite-silver-color);
+  padding: var(--padding-small-size);
+  color: var(--lite-black-color);
+  cursor: pointer;
+  border-bottom: 0.2px solid var(--lite-silver-color);
+}
+
+.admin-nav:hover {
+  font-weight: bold;
+  border-bottom: 0.2px solid silver;
+}
+
+.admin-nav-active {
+  font-weight: bold;
+  border-bottom: 0.2px solid var(--lite-black-color);
+}
+
+.admin-container {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: var(--padding-small-size);
 }
