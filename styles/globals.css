@@ -11,9 +11,11 @@
   --lite-silver-color: rgb(243, 243, 243);
   --dark-gray-color: rgb(114, 114, 114);
   --lite-black-color: #3f3f3f;
-  --plum-color: #DDA0DD;
+  --plum-color: #dda0dd;
   /* Sizes */
   --padding-small-size: 1rem;
+  --font-normal-size: 1.4rem;
+  --margin-normal-size: 1.6rem;
 }
 
 * {
@@ -32,6 +34,13 @@ body {
   font-size: 1.4rem;
   font-family: "iransans";
 }
+label{
+  color: var(--lite-black-color);
+}
+
+.link {
+  text-decoration: none;
+}
 
 .children {
   min-height: 100vh;
@@ -40,6 +49,78 @@ body {
 .btn {
   background: none;
   font-family: "iransans";
+  cursor: pointer;
+}
+
+.save-btn {
+  background: green;
+  color: white;
+  padding: var(--padding-small-size);
+  border-radius: 7px;
+  max-width: 40rem;
+  margin: var(--margin-normal-size) 0;
+}
+.page-title{
+  color: var(--lite-black-color);
+  padding: var(--padding-small-size);
+  margin-top: var(--margin-normal-size);
+}
+.input {
+  font-family: "iransans";
+  padding: 0.5rem var(--padding-small-size);
+  background: var(--lite-silver-color);
+  border-radius: 7px;
+}
+.input-list {
+  margin: .5rem 0 var(--margin-normal-size);
+  max-width: 40rem;
+  border: 1px solid silver;
+}
+.list-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.go-right {
+  align-self: flex-start;
+}
+
+.search-product {
+  margin: 2rem auto;
+  width: 100%;
+  max-width: 40rem;
+}
+
+.add-product-btn {
+  background: green;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 7px;
+}
+
+.container {
+  padding: var(--padding-small-size);
+  max-width: 1024px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.product-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  min-width: 30rem;
+  flex-wrap: wrap;
+  margin-top: var(--margin-normal-size);
+}
+
+.form-section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 40rem;
 }
 
 header {
@@ -55,22 +136,22 @@ header {
   justify-content: space-between;
   padding: var(--padding-small-size);
 }
-.header-search{
+.header-search {
   width: 100%;
   max-width: 40rem;
   font-family: "iransans";
-  padding: .5rem var(--padding-small-size);
+  padding: 0.5rem var(--padding-small-size);
   border-radius: 7px;
-  border: .2px solid silver;
+  border: 0.2px solid silver;
 }
-.header-second-section{
+.header-second-section {
   display: flex;
   justify-content: space-between;
   padding: var(--padding-small-size);
   background: var(--lite-silver-color);
-  border-bottom: .1px solid rgba(192, 192, 192, 0.3)
+  border-bottom: 0.1px solid rgba(192, 192, 192, 0.3);
 }
-.sabad{
+.sabad {
   font-size: 2rem;
 }
 .login-btn {
@@ -78,10 +159,9 @@ header {
   color: whitesmoke;
   font-family: "iransans";
 }
-.header-part-section1{
+.header-part-section1 {
   width: 65%;
 }
-
 footer {
   width: 100%;
   background: var(--lite-silver-color);
