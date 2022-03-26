@@ -55,6 +55,14 @@ header {
   justify-content: space-between;
   padding: var(--padding-small-size);
 }
+.header-search{
+  width: 100%;
+  max-width: 40rem;
+  font-family: "iransans";
+  padding: .5rem var(--padding-small-size);
+  border-radius: 7px;
+  border: .2px solid silver;
+}
 .header-second-section{
   display: flex;
   justify-content: space-between;
@@ -62,11 +70,16 @@ header {
   background: var(--lite-silver-color);
   border-bottom: .1px solid rgba(192, 192, 192, 0.3)
 }
-
+.sabad{
+  font-size: 2rem;
+}
 .login-btn {
   background: none;
   color: whitesmoke;
   font-family: "iransans";
+}
+.header-part-section1{
+  width: 65%;
 }
 
 footer {
