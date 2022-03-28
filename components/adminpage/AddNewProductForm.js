@@ -1,42 +1,22 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from "react";
 
 export default function AddNewProductForm() {
-  //state
   const [name, setname] = useState("");
-  const [image, setimage] = useState("");
-  const [instapic, setinstapic] = useState("");
+  const [selectedImage, setselectedImage] = useState();
   const [qty, setqty] = useState("");
   const [price, setprice] = useState("");
   const [description, setdescription] = useState("");
   const [category, setcategory] = useState("");
   const [off, setoff] = useState(false);
-  const [offpercent, setoffpercent] = useState("");
+  const [offpercent, setoffpercent] = useState(0);
   const [code, setcode] = useState("");
 
-  //useEffect
-  useEffect(() => {
-    getPic(image);
-  }, [name && category && price && qty && image]);
-
   //functions
-  async function getPic(image) {
-    const url = "/api/getinstapic";
-    await fetch(url, {
-      method: "POST",
-      body: JSON.stringify({ image }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then((response) => response.json())
-      .then((data) => setinstapic(data.link));
-  }
 
   const addNewProduct = async (e) => {
     e.preventDefault();
-    console.log(instapic);
-    getPic(image);
-    if (name && category && price && qty && instapic && image) {
+    if (name && category && price && qty && selectedImage) {
       let newProduct = {
         name,
         category,
@@ -47,10 +27,10 @@ export default function AddNewProductForm() {
         offpercent,
         description,
         addedBy: "omid",
-        instapic,
+        selectedImage:`/images/${selectedImage}`,
         code,
       };
-      const response = await fetch("/api/addnewproduct", {
+      const response = await fetch("/api/products", {
         method: "POST",
         body: JSON.stringify({ newProduct }),
         headers: {
@@ -84,8 +64,7 @@ export default function AddNewProductForm() {
             type="text"
             placeholder="تصویر محصول"
             className="input input-list"
-            value={image}
-            onChange={(e) => setimage(e.target.value)}
+            onChange={e => setselectedImage(e.target.value)}
           />
           <label>موجودی (اجباری)</label>
           <input
