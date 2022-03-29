@@ -4,6 +4,7 @@ import Category from "./homepage/Category";
 import Firstslide from "./homepage/Firstslide";
 import Itemssection from "./homepage/Itemssection";
 import Secondslide from "./homepage/Secondslide";
+import Suggestions from "./homepage/Suggestions";
 import Thirdslide from "./homepage/Thirdslide";
 
 export default function Homepage() {
@@ -35,6 +36,7 @@ export default function Homepage() {
           <Category />
           <Itemssection products={products} />
           <Secondslide products={products} />
+          <Suggestions products={products} />
           <Thirdslide products={products} />
           <Aboutsite />
         </div>
