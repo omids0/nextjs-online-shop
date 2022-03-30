@@ -16,10 +16,17 @@ export default function Itemssection({ products }) {
                   layout="responsive"
                   width={500}
                   height={500}
+                  className="each-product-item-img"
                 />
               </div>
               <div>
-                <p>{product.name}</p>
+                <div className="each-product-item-title">
+                  <p>{product.name}</p>
+                </div>
+                <div className="each-product-item-btns">
+                <p className="product-item-price">{`${product.price} ت`}</p>
+                <button className="btn"><i className="bi bi-cart-plus-fill product-plus"></i></button>
+                </div>
               </div>
             </div>
           </Fade>
