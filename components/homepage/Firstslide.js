@@ -112,7 +112,7 @@ export default function Firstslide({ products }) {
               ></span>
               <span
                 className={index === 5 ? "dotselected dot" : "dot"}
-                onClick={() => selectedDot(4)}
+                onClick={() => selectedDot(5)}
               ></span>
             </div>
             <div>

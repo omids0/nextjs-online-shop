@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
 import Aboutsite from "./homepage/Aboutsite";
 import Category from "./homepage/Category";
