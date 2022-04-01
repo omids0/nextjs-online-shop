@@ -594,9 +594,26 @@ input:checked + .slider:before {
 
 .homepage-about-site {
   width: 100%;
-  min-height: 30vh;
+  min-height: 50vh;
   background: var(--lite-silver-color);
   color: var(--dark-gray-color);
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.bi-clock-history, .bi-truck, .bi-bookmark-check{
+  font-size: 9rem
+}
+
+.footer-item-centering{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  text-align: center;
 }
 
 .first-slide-body {
