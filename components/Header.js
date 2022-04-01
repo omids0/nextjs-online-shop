@@ -7,7 +7,7 @@ export default function Header() {
     <header>
       <div className="header-first-section">
         <Link href="/admin" passHref>
-          <button className="btn">
+          <button className="btn hamburger-menu">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -31,6 +31,10 @@ export default function Header() {
             alt="onlineshope-logo"
           />
         </Link>
+        <div className="desktop-header">
+          <input type="text" className="desktop-search" placeholder="جستجو" />
+          <button>test</button>
+        </div>
       </div>
       <div className="header-second-section">
         <div className="header-part-section1">
