@@ -403,19 +403,19 @@ input:checked + .slider:before {
   justify-content: center;
   background: white;
   width: auto;
-  min-height: 50vh;
+  min-height: 80vh;
   flex-wrap: wrap;
   overflow-y: auto;
-  max-height: 60vh;
+  max-height: 70vh;
   margin: 5rem 1rem;
 }
 
 .each-product-item {
-  min-width: 30rem;
-  min-height: 30rem;
-  max-width: 33rem;
-  max-height: 50rem;
-  margin: 3rem;
+  min-width: 25rem;
+  min-height: 25rem;
+  max-width: 25rem;
+  max-height: 30rem;
+  margin: 5rem 1.8rem;
   border-radius: 15px;
 }
 
@@ -463,8 +463,30 @@ input:checked + .slider:before {
 .homepage-second-slide {
   width: 100%;
   min-height: 20vh;
-  background: lightgreen;
+  padding: var(--padding-small-size);
+  background: whitesmoke
 }
+
+.most-sales-list{
+  display: flex;
+  overflow-x: auto;
+}
+
+.most-sales-list-child{
+  min-width: 18rem;
+  max-width: 18rem;
+  min-height: 18rem;
+  max-height: 18rem;
+  background: none;
+  margin: 1.6rem var(--padding-small-size);
+  border-radius: 7px;
+  box-shadow: 3px 1px 10px silver;
+}
+
+.most-sales-list-child-img{
+  border-radius: 7px;
+}
+
 .homepage-third-slide {
   width: 100%;
   min-height: 20vh;
@@ -667,7 +689,7 @@ input:checked + .slider:before {
   .each-product-item {
     min-width: 15rem;
     min-height: 23rem;
-    max-width: 16rem;
+    max-width: 15rem;
     max-height: 40rem;
     margin: var(--padding-small-size);
   }
