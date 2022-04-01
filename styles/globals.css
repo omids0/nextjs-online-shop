@@ -517,10 +517,81 @@ input:checked + .slider:before {
 }
 
 .homepage-third-slide {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  align-items: center;
   width: 100%;
   min-height: 20vh;
-  background: red;
+  background: linear-gradient(to top right, #ff0000 0%, #990000 100%);
+  padding: 1rem;
 }
+
+.off-title-percent{
+  color: gold;
+  font-size: 3.5rem;
+}
+
+.off-title{
+  color: white;
+}
+
+.off-header-container{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+.off-list{
+  display:flex;
+  margin-right: 3rem;
+}
+
+.each-off-product{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 20rem;
+  min-height: 30rem;
+  max-width: 20rem;
+  max-height: 30rem;
+  background: white;
+  margin: 1rem 0.5rem;
+  padding: 1rem;
+  align-items: center;
+}
+
+.each-off-product-image{
+  border-radius: 10px;
+}
+
+.off-status{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem
+}
+
+.off-status-percent{
+  background: red;
+  color: white;
+  font-weight: bold;
+  border-radius: 7px;
+  padding: 0.05rem .8rem
+}
+
+.off-status-price{
+  font-weight: bold;
+}
+
+.off-price{
+  text-decoration-line: line-through;
+  -webkit-text-decoration-line: line-through;
+  color: silver;
+  font-size: 2rem;
+}
+
 .homepage-about-site {
   width: 100%;
   min-height: 30vh;
@@ -691,7 +762,7 @@ input:checked + .slider:before {
     width: calc(100% - 10rem);
   }
   .suggestions-block{
-    margin: 1rem;
+    margin: 2rem 1rem;
   }
 }
 
