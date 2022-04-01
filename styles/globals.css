@@ -487,6 +487,35 @@ input:checked + .slider:before {
   border-radius: 7px;
 }
 
+.suggestions-block{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background: linear-gradient(to top right, #ff0066 0%, #ff99cc 100%);
+  width: auto;
+  min-height: 23rem;
+  border-radius: 30px;
+  margin: 3rem 2rem;
+  padding: 1rem;
+}
+
+.suggestions-block-description{
+  color: white;
+  text-align: center;
+  max-width: 30rem;
+}
+
+.suggestions-girls-day{
+  color: red;
+  font-weight: bold;
+  font-size: 4rem
+}
+
+.suggestions-block-image-container{
+
+}
+
 .homepage-third-slide {
   width: 100%;
   min-height: 20vh;
@@ -661,6 +690,9 @@ input:checked + .slider:before {
   .first-slide-desktop {
     width: calc(100% - 10rem);
   }
+  .suggestions-block{
+    margin: 1rem;
+  }
 }
 
 @media (max-width: 768px) {
@@ -707,5 +739,13 @@ input:checked + .slider:before {
 
   .product-plus {
     font-size: 2.2rem;
+  }
+
+  .suggestions-block-description{
+    font-size: 1.8rem
+  }
+
+  .suggestions-girls-day{
+    font-size: 2rem;
   }
 }
