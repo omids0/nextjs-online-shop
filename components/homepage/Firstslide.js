@@ -1,6 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
+import Link from "next/link";
 
 export default function Firstslide({ products }) {
   const [index, setindex] = useState(0);
@@ -36,48 +37,54 @@ export default function Firstslide({ products }) {
       {loading && (
         <div>
           <div className="first-slide-body">
-            <div className="first-slide-desktop">
-              <div className="first-slide-body-right">
-                <div>
-                  <h3 className="first-slide-title">{products[index].name}</h3>
-                  <h4 className="first-slide-price">{`${products[index].price} تومان`}</h4>
-                </div>
-                <p className="first-slide-description">
-                  {products[index].description}
-                </p>
-              </div>
-              <div className="first-slide-body-left">
-                <Image
-                  src={products[index].selectedImage}
-                  width={1000}
-                  height={1000}
-                  alt="اسلاید جدیدترین های امیدشاپ"
-                  className="first-slide-image"
-                />
-              </div>
-            </div>
-            <div className="first-slide-mobile-view">
-              <div className="first-slide-body-mobile fade">
-                <Image
-                  src={products[index].selectedImage}
-                  width={1000}
-                  height={1000}
-                  alt="اسلاید جدیدترین های امیدشاپ"
-                  className="first-slide-image-mobile"
-                />
-                <div className="slide1-text">
-                  <p className="first-slide-description-mobile">
+            <Link href={`/product/${products[index]._id}`} passHref>
+              <div className="first-slide-desktop">
+                <div className="first-slide-body-right">
+                  <div>
+                    <h3 className="first-slide-title">
+                      {products[index].name}
+                    </h3>
+                    <h4 className="first-slide-price">{`${products[index].price} تومان`}</h4>
+                  </div>
+                  <p className="first-slide-description">
                     {products[index].description}
                   </p>
-                  <div>
-                    <h5 className="first-slide-title-mobile">
-                      {products[index].name}
-                    </h5>
-                    <p className="first-slide-price-mobile">{`${products[index].price} تومان`}</p>
+                </div>
+                <div className="first-slide-body-left">
+                  <Image
+                    src={products[index].selectedImage}
+                    width={1000}
+                    height={1000}
+                    alt="اسلاید جدیدترین های امیدشاپ"
+                    className="first-slide-image"
+                  />
+                </div>
+              </div>
+            </Link>
+            <Link href={`/product/${products[index]._id}`} passHref>
+              <div className="first-slide-mobile-view">
+                <div className="first-slide-body-mobile fade">
+                  <Image
+                    src={products[index].selectedImage}
+                    width={1000}
+                    height={1000}
+                    alt="اسلاید جدیدترین های امیدشاپ"
+                    className="first-slide-image-mobile"
+                  />
+                  <div className="slide1-text">
+                    <p className="first-slide-description-mobile">
+                      {products[index].description}
+                    </p>
+                    <div>
+                      <h5 className="first-slide-title-mobile">
+                        {products[index].name}
+                      </h5>
+                      <p className="first-slide-price-mobile">{`${products[index].price} تومان`}</p>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            </Link>
           </div>
           <div className="slide-controler">
             <div>

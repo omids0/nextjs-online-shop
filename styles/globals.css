@@ -62,8 +62,8 @@ label {
 
 .link {
   text-decoration: none;
+  cursor: pointer;
 }
-
 .children {
   min-height: 100vh;
 }
