@@ -32,8 +32,17 @@ export default function Header() {
           />
         </Link>
         <div className="desktop-header">
-          <input type="text" className="desktop-search" placeholder="جستجو" />
-          <button>test</button>
+          <input
+            type="text"
+            className="input desktop-search"
+            placeholder="جستجو"
+          />
+          <div>
+            <button className="btn header-login-btn">ورود | ثبت نام</button> {` | `}
+            <button className="cart-btn">
+              <i className="bi bi-cart sabad"></i>
+            </button>
+          </div>
         </div>
       </div>
       <div className="header-second-section">

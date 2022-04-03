@@ -512,9 +512,6 @@ input:checked + .slider:before {
   font-size: 4rem;
 }
 
-.suggestions-block-image-container {
-}
-
 .homepage-third-slide {
   display: flex;
   flex-direction: row;
@@ -772,10 +769,26 @@ input:checked + .slider:before {
 
 .desktop-header {
   width: 100%;
-  background: blue;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: var(--padding-small-size);
+}
+
+.desktop-search{
+  width: 100%;
+  max-width: 50rem;
+  border: 1px solid silver;
+}
+
+.cart-btn{
+  background: none;
+}
+
+.header-login-btn{
+  border: 1px solid var(--lite-silver-color);
+  padding: 0.5rem 1rem;
+  border-radius: 7px;
 }
 
 @keyframes fade {
