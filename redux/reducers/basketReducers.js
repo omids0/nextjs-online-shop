@@ -1,0 +1,24 @@
+export const addToBasketReducer = (state = { basketItems: [] }, action) => {
+  switch (action.type) {
+    case "ADD_TO_BASKET":
+      const alreadyExist = state.basketItems.find(
+        (item) => item._id === action.payload._id
+      );
+
+      if (alreadyExist) {
+        return {
+          ...state,
+          basketItems: state.basketItems.map((item) =>
+            item._id === action.payload._id ? action.payload : item
+          ),
+        };
+      } else {
+        return {
+          ...state,
+          basketItems: [...state.basketItems, action.payload],
+        };
+      }
+      default:
+            return state
+  }
+};
