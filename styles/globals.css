@@ -831,7 +831,7 @@ input:checked + .slider:before {
   min-width: 30rem;
 }
 
-.product-detail-image{
+.product-detail-image {
   border-radius: 10px;
 }
 
@@ -848,24 +848,24 @@ input:checked + .slider:before {
   justify-content: space-between;
 }
 
-.product-detail-code{
+.product-detail-code {
   color: silver;
   padding: 2rem 0;
 }
 
-.product-detail-last-part{
+.product-detail-last-part {
   width: 100%;
   background: silver;
   padding: var(--padding-small-size);
   border-radius: 7px;
 }
 
-.product-detail-last-part h3{
+.product-detail-last-part h3 {
   color: black;
-  margin-bottom: 1rem
+  margin-bottom: 1rem;
 }
 
-.product-detail-addtolist{
+.product-detail-addtolist {
   background: gold;
   padding: 0.5rem;
   width: 100%;
@@ -873,11 +873,11 @@ input:checked + .slider:before {
   border-radius: 7px;
 }
 
-.product-detail-description{
+.product-detail-description {
   font-weight: bold;
 }
 
-.product-detail-without-off{
+.product-detail-without-off {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -885,48 +885,48 @@ input:checked + .slider:before {
   align-items: center;
 }
 
-.product-detail-off-1{
+.product-detail-off-1 {
   width: 100%;
   display: flex;
-  justify-content:space-between;
+  justify-content: space-between;
 }
 
-.product-detail-off-1 h2{
+.product-detail-off-1 h2 {
   color: #888;
   text-decoration: line-through;
   text-decoration-color: red;
 }
 
-.product-detail-off-1 h3{
+.product-detail-off-1 h3 {
   color: white;
   background: red;
   border-radius: 10px;
-  padding: 0 .5rem
+  padding: 0 0.5rem;
 }
 
-.product-detail-off-price{
-  margin: 0 auto
+.product-detail-off-price {
+  margin: 0 auto;
 }
 
-.product-detail-off-2{
+.product-detail-off-2 {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.basket-container{
+.basket-container {
   width: 100%;
   min-height: 100vh;
 }
 
-.basket-detailes-container{
+.basket-detailes-container {
   max-width: 1024px;
   margin: 0 auto;
-  padding: var(--padding-small-size)
+  padding: var(--padding-small-size);
 }
 
-.empty-basket{
+.empty-basket {
   width: 100%;
   min-height: 70vh;
   display: flex;
@@ -935,15 +935,124 @@ input:checked + .slider:before {
   align-items: center;
 }
 
-.bi-basket2{
+.bi-basket2 {
   font-size: 20rem;
   color: red;
 }
 
-.empty-basket p{
+.empty-basket p {
   color: #3f3f3f;
   padding: 2rem 1rem;
   text-align: center;
+}
+
+.header-basket-qty {
+  min-width: 4rem;
+  display: flex;
+}
+
+.basket-length {
+  color: red;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.basket-notempty-length {
+  padding: 2rem 0;
+  color: silver;
+}
+
+.basket-notempty-product {
+  background: var(--lite-silver-color);
+  border: 0.5px solid rgba(192, 192, 192, 0.5);
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 2rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.basket-product-title{
+  margin-bottom: 2rem
+}
+
+.bold-text{
+  font-weight: bold
+}
+
+.basket-product-code{
+  color: var(--lite-black-color)
+}
+
+.basket-product-description{
+  color: var(--lite-black-color);
+  margin-top: 1.6rem;
+}
+
+.basket-product-image-container{
+  max-width: 30rem;
+}
+
+.basket-product-inoff{
+  min-width: 15rem;
+  max-width: 15rem;
+  display: flex;
+  justify-content: space-between;
+}
+.basket-product-inoff-percent{
+  background: red;
+  color: white;
+  font-weight: bold;
+  padding: 0 .2rem;
+  border-radius: 7px
+}
+.basket-product-inoff-price{
+  color: silver;
+  text-decoration: line-through;
+  text-decoration-color: red;
+}
+
+.basket-product-saving-container{
+  max-width:15rem;
+  padding: 1rem 0;
+}
+
+.save-title{
+  color: red;
+}
+
+.basket-product-saving-container h3{
+  color: red;
+  margin-top: 2rem
+}
+
+.basket-plus{
+  padding: 0 1rem;
+  background: green;
+  color: white;
+  font-weight: bold;
+  font-size: 2rem
+}
+
+.basket-minus{
+  padding: 0 1rem;
+  background: red;
+  color: white;
+  font-weight: bold;
+  font-size: 2rem
+}
+
+.basket-qty-counter{
+  padding:1rem;
+  max-width: 3rem
+}
+
+.basket-calculator{
+  padding: 2rem 0;
+  font-weight: bold;
 }
 
 @keyframes fade {
@@ -961,6 +1070,8 @@ input:checked + .slider:before {
   }
   .suggestions-block {
     margin: 2rem 1rem;
+  }
+  .basket-notempty-product{
   }
 }
 
@@ -1027,7 +1138,7 @@ input:checked + .slider:before {
   .desktop-header {
     display: none;
   }
-  .product-detail-desktop-container{
+  .product-detail-desktop-container {
     flex-direction: column;
   }
 }

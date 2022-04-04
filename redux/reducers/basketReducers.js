@@ -18,7 +18,12 @@ export const addToBasketReducer = (state = { basketItems: [] }, action) => {
           basketItems: [...state.basketItems, action.payload],
         };
       }
-      default:
-            return state
+    case "GET_BASKET_HISTORY":
+      return {
+        ...state,
+        basketItems: action.payload,
+      };
+    default:
+      return state;
   }
 };

@@ -1,8 +1,20 @@
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getUserHistoryBasketAction } from "../redux/actions/basketActions";
 
 export default function Header() {
+  const basket = useSelector((state) => state.addToBasketReducer.basketItems);
+
+  const dispatch = useDispatch();
+  useEffect(() => {
+    const basket = localStorage.getItem("omidshopbasket")
+      ? JSON.parse(localStorage.getItem("omidshopbasket"))
+      : [];
+    dispatch(getUserHistoryBasketAction(basket));
+  }, []);
+
   return (
     <header>
       <div className="header-first-section">
@@ -41,9 +53,14 @@ export default function Header() {
             <button className="btn header-login-btn">ورود | ثبت نام</button>{" "}
             {` | `}
             <Link href="/basket" passHref>
-            <button className="cart-btn">
-              <i className="bi bi-cart sabad"></i>
-            </button>
+              <button className="cart-btn">
+                <div className="header-basket-qty">
+                  {basket.length > 0 && (
+                    <p className="basket-length">{basket.length}</p>
+                  )}
+                  <i className="bi bi-cart sabad"></i>
+                </div>
+              </button>
             </Link>
           </div>
         </div>
@@ -57,7 +74,12 @@ export default function Header() {
           {` | `}
           <Link href="/basket" passHref>
             <button className="cart-btn">
-              <i className="bi bi-cart sabad"></i>
+              <div className="header-basket-qty">
+                {basket.length > 0 && (
+                  <p className="basket-length">{basket.length}</p>
+                )}
+                <i className="bi bi-cart sabad"></i>
+              </div>
             </button>
           </Link>
         </div>
