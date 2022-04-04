@@ -38,10 +38,13 @@ export default function Header() {
             placeholder="جستجو"
           />
           <div>
-            <button className="btn header-login-btn">ورود | ثبت نام</button> {` | `}
+            <button className="btn header-login-btn">ورود | ثبت نام</button>{" "}
+            {` | `}
+            <Link href="/basket" passHref>
             <button className="cart-btn">
               <i className="bi bi-cart sabad"></i>
             </button>
+            </Link>
           </div>
         </div>
       </div>
@@ -52,9 +55,11 @@ export default function Header() {
         <div>
           <button className="btn">ورود</button>
           {` | `}
-          <button className="cart-btn">
-            <i className="bi bi-cart sabad"></i>
-          </button>
+          <Link href="/basket" passHref>
+            <button className="cart-btn">
+              <i className="bi bi-cart sabad"></i>
+            </button>
+          </Link>
         </div>
       </div>
     </header>

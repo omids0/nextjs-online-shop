@@ -915,6 +915,37 @@ input:checked + .slider:before {
   align-items: center;
 }
 
+.basket-container{
+  width: 100%;
+  min-height: 100vh;
+}
+
+.basket-detailes-container{
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: var(--padding-small-size)
+}
+
+.empty-basket{
+  width: 100%;
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.bi-basket2{
+  font-size: 20rem;
+  color: red;
+}
+
+.empty-basket p{
+  color: #3f3f3f;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
 @keyframes fade {
   from {
     opacity: 0.4;
