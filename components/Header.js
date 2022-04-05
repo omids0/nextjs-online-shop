@@ -50,7 +50,9 @@ export default function Header() {
             placeholder="جستجو"
           />
           <div>
-            <button className="btn header-login-btn">ورود | ثبت نام</button>{" "}
+            <Link href="/login" passHref>
+              <button className="btn header-login-btn">ورود | ثبت نام</button>
+            </Link>{" "}
             {` | `}
             <Link href="/basket" passHref>
               <button className="cart-btn">
@@ -70,7 +72,9 @@ export default function Header() {
           <input className="header-search" type="text" placeholder="جستجو" />
         </div>
         <div>
-          <button className="btn">ورود</button>
+          <Link href="/login" passHref>
+            <button className="btn">ورود</button>
+          </Link>
           {` | `}
           <Link href="/basket" passHref>
             <button className="cart-btn">
