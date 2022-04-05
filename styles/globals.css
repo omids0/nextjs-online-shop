@@ -1072,6 +1072,32 @@ input:checked + .slider:before {
   margin-top: 1rem;
 }
 
+.basket-factor-container{
+  width: 100%;
+  background:var(--navy-color);
+  border-radius: 7px;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+.basket-factor-container p{
+  color: white;
+}
+
+.basket-factor-totalprice{
+  margin: 0 1rem;
+  color: gold;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+.basket-continue{
+  background: gold;
+  color: var(--lite-black-color);
+  padding: 0 1rem;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
 @keyframes fade {
   from {
     opacity: 0.4;

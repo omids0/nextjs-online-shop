@@ -1,24 +1,29 @@
-import React, { useState } from "react";
-import BasketProcess from "./BasketProcess";
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
 import Image from "next/image";
 import {
   addToBasketAction,
+  getUserHistoryBasketAction,
   removeFromBasketAction,
 } from "../../redux/actions/basketActions";
 
 export default function Basket() {
   const basket = useSelector((state) => state.addToBasketReducer.basketItems);
+
   const dispatch = useDispatch();
+  let factorFinalPrice = basket.reduce((c, x) => c + x.total_price, 0);
 
   const plusQty = (product) => {
     dispatch(addToBasketAction(product, product.order_qty + 1));
+    factorFinalPrice = basket.reduce((c, x) => c + x.total_price, 0);
   };
 
   const minusQty = (product) => {
     if (product.order_qty > 1) {
       dispatch(addToBasketAction(product, product.order_qty - 1));
+      factorFinalPrice = basket.reduce((c, x) => c + x.total_price, 0);
     } else {
       alert("مقدار کمتر از یک امکان پذیر نیست!");
     }
@@ -26,7 +31,6 @@ export default function Basket() {
 
   return (
     <div className="basket-container">
-      {basket.length > 0 && <BasketProcess />}
       <div className="basket-detailes-container">
         {basket.length > 0 ? (
           <div>
@@ -115,7 +119,14 @@ export default function Basket() {
                 </div>
               ))}
             </div>
-            <div>kala va sood</div>
+            <div className="basket-factor-container">
+              <p>
+                مبلغ قابل پرداخت مجموعا
+                <span className="basket-factor-totalprice">{factorFinalPrice}</span>
+                تومان می باشد.
+              </p>
+              <button className="btn basket-continue">تایید و ادامه</button>
+            </div>
           </div>
         ) : (
           <div className="empty-basket">
