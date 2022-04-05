@@ -122,8 +122,7 @@ export default function Basket() {
             <div className="basket-factor-container">
               <p>
                 مبلغ قابل پرداخت مجموعا
-                <span className="basket-factor-totalprice">{factorFinalPrice}</span>
-                تومان می باشد.
+                <span className="basket-factor-totalprice">{factorFinalPrice} تومان </span> می باشد.
               </p>
               <button className="btn basket-continue">تایید و ادامه</button>
             </div>

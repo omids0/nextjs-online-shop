@@ -1085,7 +1085,7 @@ input:checked + .slider:before {
 }
 
 .basket-factor-totalprice{
-  margin: 0 1rem;
+  margin-right: 1rem;
   color: gold;
   font-size: 1.8rem;
   font-weight: bold;
