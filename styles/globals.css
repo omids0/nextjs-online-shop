@@ -975,84 +975,101 @@ input:checked + .slider:before {
   justify-content: space-between;
 }
 
-.basket-product-title{
-  margin-bottom: 2rem
+.basket-product-title {
+  margin-bottom: 2rem;
 }
 
-.bold-text{
-  font-weight: bold
+.bold-text {
+  font-weight: bold;
 }
 
-.basket-product-code{
-  color: var(--lite-black-color)
+.basket-product-code {
+  color: var(--lite-black-color);
 }
 
-.basket-product-description{
+.basket-product-description {
   color: var(--lite-black-color);
   margin-top: 1.6rem;
 }
 
-.basket-product-image-container{
+.basket-product-image-container {
   max-width: 30rem;
 }
 
-.basket-product-inoff{
+.basket-product-inoff {
   min-width: 15rem;
   max-width: 15rem;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
-.basket-product-inoff-percent{
+.basket-product-inoff-percent {
   background: red;
   color: white;
   font-weight: bold;
-  padding: 0 .2rem;
-  border-radius: 7px
+  padding: 0 0.2rem;
+  border-radius: 7px;
 }
-.basket-product-inoff-price{
+.basket-product-inoff-price {
   color: silver;
   text-decoration: line-through;
   text-decoration-color: red;
 }
 
-.basket-product-saving-container{
-  max-width:15rem;
+.basket-product-saving-container {
+  max-width: 15rem;
   padding: 1rem 0;
 }
 
-.save-title{
+.save-title {
   color: red;
 }
 
-.basket-product-saving-container h3{
+.basket-product-saving-container h3 {
   color: red;
-  margin-top: 2rem
+  margin: 1rem 0;
 }
 
-.basket-plus{
+.basket-plus {
   padding: 0 1rem;
   background: green;
   color: white;
   font-weight: bold;
-  font-size: 2rem
+  font-size: 2rem;
 }
 
-.basket-minus{
+.basket-minus {
   padding: 0 1rem;
   background: red;
   color: white;
   font-weight: bold;
-  font-size: 2rem
+  font-size: 2rem;
 }
 
-.basket-qty-counter{
-  padding:1rem;
-  max-width: 3rem
+.basket-qty-counter {
+  padding: 1rem;
+  max-width: 3rem;
 }
 
-.basket-calculator{
+.basket-calculator {
   padding: 2rem 0;
   font-weight: bold;
+}
+
+.basket-final-price {
+  background: white;
+  border-radius: 10px;
+  padding: 1rem;
+  border: 1px solid silver;
+  margin-top: 2rem;
+}
+
+.basket-remove-btn {
+  width: 100%;
+  background: red;
+  color: white;
+  border-radius: 5px;
+  margin-top: 1rem;
 }
 
 @keyframes fade {
@@ -1071,7 +1088,30 @@ input:checked + .slider:before {
   .suggestions-block {
     margin: 2rem 1rem;
   }
-  .basket-notempty-product{
+  .basket-notempty-product {
+    flex-direction: column;
+  }
+  .basket-product-contenets {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: right;
+    margin: 2rem 0;
+  }
+  .basket-calc-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 30rem;
+  }
+  .basket-calculator {
+    display: none;
+  }
+  .basket-product-saving-container {
+    max-width: 40rem;
+  }
+  .basket-product-inoff {
+    max-width: 40rem;
   }
 }
 

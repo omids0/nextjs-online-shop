@@ -3,7 +3,10 @@ import BasketProcess from "./BasketProcess";
 import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
 import Image from "next/image";
-import { addToBasketAction } from "../../redux/actions/basketActions";
+import {
+  addToBasketAction,
+  removeFromBasketAction,
+} from "../../redux/actions/basketActions";
 
 export default function Basket() {
   const basket = useSelector((state) => state.addToBasketReducer.basketItems);
@@ -40,7 +43,7 @@ export default function Basket() {
                       height={1500}
                     />
                   </div>
-                  <div>
+                  <div className="basket-product-contenets">
                     <h2 className="basket-product-title">{item.name}</h2>
                     <p className="bold-text basket-product-code">کد کالا:</p>
                     <p>{item.code}</p>
@@ -53,15 +56,18 @@ export default function Basket() {
                     </p>
                     <p>{item.price} تومان</p>
                   </div>
-                  <div>
+                  <div className="">
                     {item.inOff && (
                       <div className="basket-product-inoff">
                         <p className="basket-product-inoff-percent">
                           {item.offPercent * 100}%
                         </p>
-                        <p className="basket-product-inoff-price">
-                          {item.price} ت
-                        </p>
+                        <div>
+                          <p className="basket-product-inoff-price">
+                            {item.price} ت
+                          </p>
+                          <h3>{item.finalPrice}ت</h3>
+                        </div>
                       </div>
                     )}
                     {item.inOff && (
@@ -72,33 +78,38 @@ export default function Basket() {
                         <h3>{item.price - item.finalPrice} تومان</h3>
                       </div>
                     )}
-                    <div>
-                      <button
-                        className="btn basket-plus"
-                        onClick={() => plusQty(item)}
-                      >
-                        +
-                      </button>
-                      <input
-                        type="text"
-                        value={item.order_qty}
-                        className="basket-qty-counter"
-                      />
-                      <button
-                        className="btn basket-minus"
-                        onClick={() => minusQty(item)}
-                      >
-                        -
-                      </button>
-                    </div>
-                    <div className="basket-calculator">
-                      <p>
-                        {item.finalPrice} * {item.order_qty}
-                      </p>
-                    </div>
-                    <div className=''>
-                      <p>مبلغ قابل پرداخت:</p>
-                      <p>{item.total_price} تومان</p>
+                    <div className="basket-calc-container">
+                      <div>
+                        <button
+                          className="btn basket-plus"
+                          onClick={() => plusQty(item)}
+                        >
+                          +
+                        </button>
+                        <input
+                          type="text"
+                          value={item.order_qty}
+                          className="basket-qty-counter"
+                        />
+                        <button
+                          className="btn basket-minus"
+                          onClick={() => minusQty(item)}
+                        >
+                          -
+                        </button>
+                      </div>
+                      <div className="basket-final-price">
+                        <p>مبلغ قابل پرداخت:</p>
+                        <p>{item.total_price} تومان</p>
+                        <button
+                          className="btn basket-remove-btn"
+                          onClick={() =>
+                            dispatch(removeFromBasketAction(item._id))
+                          }
+                        >
+                          حذف
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>

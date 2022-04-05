@@ -23,6 +23,13 @@ export const addToBasketReducer = (state = { basketItems: [] }, action) => {
         ...state,
         basketItems: action.payload,
       };
+    case "REMOVE_FROM_BASKET":
+      return {
+        ...state,
+        basketItems: state.basketItems.filter(
+          (item) => item._id !== action.payload
+        ),
+      };
     default:
       return state;
   }
