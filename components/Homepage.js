@@ -7,6 +7,7 @@ import Itemssection from "./homepage/Itemssection";
 import Secondslide from "./homepage/Secondslide";
 import Suggestions from "./homepage/Suggestions";
 import Thirdslide from "./homepage/Thirdslide";
+import Loading from "./Loading";
 
 export default function Homepage() {
   //state
@@ -30,7 +31,7 @@ export default function Homepage() {
 
   return (
     <div className="homepage">
-      {loading && <h3>لطفا صبر کنید...</h3>}
+      {loading && <Loading />}
       {products.length > 0 && (
         <div>
           <Firstslide products={products} />
