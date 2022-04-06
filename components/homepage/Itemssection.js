@@ -7,6 +7,7 @@ import { addToBasketAction } from "../../redux/actions/basketActions";
 
 export default function Itemssection({ products }) {
   const dispatch = useDispatch();
+  
   const addToBasket = (product) => {
     const selectedProduct = {
       _id: product._id,
