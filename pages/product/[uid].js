@@ -4,11 +4,13 @@ import AppLayout from "../../components/AppLayout";
 import db from "../../utils/db/mongoose";
 import Products from "../../models/Products";
 import SelectedProduct from "../../components/SelectedProduct";
+import Loading from "../../components/Loading";
 
 export default function EachProduct({ product }) {
   return (
     <AppLayout>
-      <SelectedProduct product={product} />
+      {product && <SelectedProduct product={product} />}
+      {!product && <Loading />}
     </AppLayout>
   );
 }
