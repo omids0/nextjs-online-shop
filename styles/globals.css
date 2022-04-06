@@ -1193,7 +1193,21 @@ input:checked + .slider:before {
 .hamburger-menu-up2 p{
   padding-bottom: var(--padding-small-size);
 }
-
+.aboutpage-container{
+  max-width: 1024px;
+  margin: auto;
+  padding: 5rem var(--padding-small-size);
+}
+.aboutpage-container p{
+  margin-bottom: 1rem;
+  color: var(--lite-black-color);
+}
+.aboutpage-container h2{
+  margin-bottom: 2rem
+}
+.aboutpage-container ol{
+  margin-right: 4rem;
+}
 /* Safari */
 @-webkit-keyframes spin {
   0% {

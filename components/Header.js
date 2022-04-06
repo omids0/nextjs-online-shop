@@ -56,7 +56,9 @@ export default function Header() {
                 <p>ورود یا ثبت نام</p>
               </Link>
               <p>فرصت های شغلی</p>
-              <p>درباره سایت</p>
+              <Link href="/about" passHref>
+                <p>درباره سایت</p>
+              </Link>
             </div>
           </div>
         )}
