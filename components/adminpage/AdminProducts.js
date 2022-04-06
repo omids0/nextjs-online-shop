@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
+import Loading from "../Loading"
 
 export default function AdminProducts() {
   const [loading, setloading] = useState(true);
@@ -25,7 +26,7 @@ export default function AdminProducts() {
       </Link>
       <input type="text" placeholder="جستجو" className="input search-product" />
       <div>
-        {loading && <h3>لطفا صبر کنید...</h3>}
+        {loading && <Loading />}
         {products.length > 0 && (
           <div className="table-div">
             <table className="table">
