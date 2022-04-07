@@ -136,7 +136,7 @@ export default function AddNewProductForm() {
             value={code}
             onChange={(e) => setcode(e.target.value)}
           />
-          <button className="btn save-btn">ذخیره</button>
+          <button className="btn save-btn" disabled='false'>ذخیره</button>
         </div>
       </form>
     </div>
