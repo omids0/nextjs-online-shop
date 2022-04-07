@@ -31,7 +31,7 @@ export default function Header() {
 
   function userLogOut() {
     localStorage.removeItem("omidshopuser");
-    setuserdata('')
+    setuserdata("");
   }
 
   return (
@@ -93,7 +93,10 @@ export default function Header() {
               <div className="header-userdata">
                 <p>{userdata[0].name}</p>
                 <div className="header-user-options">
-                  <p className="header-user-options-btn" onClick={userLogOut}>خروج</p>
+                  <p>صفحه ادمین</p>
+                  <p className="header-user-options-btn" onClick={userLogOut}>
+                    خروج
+                  </p>
                 </div>
               </div>
             ) : (
@@ -124,7 +127,10 @@ export default function Header() {
             <div className="header-userdata">
               <p>{userdata[0].name}</p>
               <div className="header-user-options">
-                <p className="header-user-options-btn" onClick={userLogOut}>خروج</p>
+                <p>صفحه ادمین</p>
+                <p className="header-user-options-btn" onClick={userLogOut}>
+                  خروج
+                </p>
               </div>
             </div>
           ) : (

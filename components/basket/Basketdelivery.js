@@ -9,20 +9,44 @@ export default function Basketdelivery() {
 
   const [userdata, setuserdata] = useState([]);
   const [basketdata, setbasketdata] = useState([]);
+  const [description, setdescription] = useState("");
+  const [loading, setloading] = useState(false);
 
   useEffect(() => {
     const userdatas = localStorage.getItem("omidshopuser")
       ? JSON.parse(localStorage.getItem("omidshopuser"))
       : [];
     setuserdata(userdatas);
-    console.log(userdata);
 
     const basket = localStorage.getItem("omidshopbasket")
       ? JSON.parse(localStorage.getItem("omidshopbasket"))
       : [];
     setbasketdata(basket);
-    console.log(basket);
   }, []);
+
+  async function saveOrderHandler() {
+    const userOrder = {
+      user: userdata[0],
+      products: basketdata,
+      description,
+      confirmed: false,
+      sendToPost: false,
+      inPost: false,
+      deliverd: false,
+      noteAccept: false,
+    };
+    setloading(true);
+    const response = await fetch("/api/orders/", {
+      method: "POST",
+      body: JSON.stringify({ userOrder }),
+      headers: { "Content-Type": "application/json" },
+    })
+      .then((response) => response.json())
+      .then((data) => alert(`${data.insertedId} شماره پیگیری :`));
+    window.location.href = "/";
+    localStorage.removeItem('omidshopbasket')
+  }
+
   return (
     <div className="basketdelivery-container">
       <h2>اطلاعات تکمیلی سفارش شما</h2>
@@ -101,14 +125,22 @@ export default function Basketdelivery() {
           </div>
         </div>
       )}
-      {basketdata.length > 0 && (
-        <div className='basketdelivery-order-container'>
+      {basketdata.length > 0 && userdata.length > 0 && (
+        <div className="basketdelivery-order-container">
           <h3>در صورتی که توضیحاتی در خصوص سفارش دارید، یادداشت بفرمایید:</h3>
           <textarea
             className="input basketdelivery-order-description"
             placeholder="توضیحاتی شامل شماره تماس دوم و ..."
+            value={description}
+            onChange={(e) => setdescription(e.target.value)}
           ></textarea>
-          <button className="btn basketdelivery-order-btn">تایید و پرداخت</button>
+          <button
+            className="btn basketdelivery-order-btn"
+            onClick={saveOrderHandler}
+            disabled={loading && 'false'}
+          >
+            {loading ? "لطفا صبر کنید.." : "تایید و پرداخت"}
+          </button>
         </div>
       )}
     </div>

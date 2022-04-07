@@ -1312,6 +1312,7 @@ input:checked + .slider:before {
 }
 .header-userdata:hover .header-user-options{
   display: flex;
+  flex-direction: column;
   position: absolute;
   left: 6rem;
   z-index: 10;
