@@ -1296,6 +1296,38 @@ input:checked + .slider:before {
   color: white;
   border-radius: 7px;
 }
+
+.header-user-details{
+  width: auto;
+  min-width: 10rem;
+  max-width: 18rem;
+  display: flex;
+  justify-content: space-between;
+}
+.header-user-options{
+  display: none;
+}
+.header-userdata{
+  color: black;
+}
+
+.header-userdata:hover .header-user-options{
+  display: flex;
+  position: absolute;
+  left: 2rem;
+  z-index: 10;
+  width: 15rem;
+  min-height: 20rem;
+  background: white;
+  color: var(--lite-black-color);
+  border: 1px solid #ddd;
+  border-radius: 7px;
+  padding: var(--padding-small-size)
+}
+
+.header-user-options-btn{
+  font-size: 1.4rem
+}
 /* Safari */
 @-webkit-keyframes spin {
   0% {

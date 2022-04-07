@@ -10,17 +10,29 @@ export default function Header() {
   const dispatch = useDispatch();
 
   const [hamburMenu, sethamburMenu] = useState(false);
+  const [userdata, setuserdata] = useState("");
 
   useEffect(() => {
     const basket = localStorage.getItem("omidshopbasket")
       ? JSON.parse(localStorage.getItem("omidshopbasket"))
       : [];
+
+    const userdatas = localStorage.getItem("omidshopuser")
+      ? JSON.parse(localStorage.getItem("omidshopuser"))
+      : [];
+    setuserdata(userdatas);
+
     dispatch(getUserHistoryBasketAction(basket));
   }, []);
 
   const showHamburgerMenu = () => {
     sethamburMenu(!hamburMenu);
   };
+
+  function userLogOut() {
+    localStorage.removeItem("omidshopuser");
+    setuserdata('')
+  }
 
   return (
     <header>
@@ -76,10 +88,19 @@ export default function Header() {
             className="input desktop-search"
             placeholder="جستجو"
           />
-          <div>
-            <Link href="/login" passHref>
-              <button className="btn header-login-btn">ورود | ثبت نام</button>
-            </Link>{" "}
+          <div className="header-user-details">
+            {userdata.length > 0 ? (
+              <div className="header-userdata">
+                <p>{userdata[0].name}</p>
+                <div className="header-user-options">
+                  <p className="header-user-options-btn" onClick={userLogOut}>خروج</p>
+                </div>
+              </div>
+            ) : (
+              <Link href="/login" passHref>
+                <button className="btn header-login-btn">ورود | ثبت نام</button>
+              </Link>
+            )}{" "}
             {` | `}
             <Link href="/basket" passHref>
               <button className="cart-btn">
@@ -98,10 +119,20 @@ export default function Header() {
         <div className="header-part-section1">
           <input className="header-search" type="text" placeholder="جستجو" />
         </div>
-        <div>
-          <Link href="/login" passHref>
-            <button className="btn">ورود</button>
-          </Link>
+        <div className="header-user-details">
+          {userdata.length > 0 ? (
+            <div className="header-userdata">
+              <p>{userdata[0].name}</p>
+              <div className="header-user-options">
+                <p className="header-user-options-btn" onClick={userLogOut}>خروج</p>
+              </div>
+            </div>
+          ) : (
+            <Link href="/login" passHref>
+              <button className="btn">ورود</button>
+            </Link>
+          )}
+
           {` | `}
           <Link href="/basket" passHref>
             <button className="cart-btn">

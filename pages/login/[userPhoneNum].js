@@ -6,6 +6,9 @@ import db from "../../utils/db/mongoose";
 
 export default function userLoged({ userPhoneNum, user }) {
   console.log(user);
+  if (user.length > 0) {
+    localStorage.setItem("omidshopuser", JSON.stringify(user));
+  }
   return (
     <div>
       {user.length > 0 ? (
