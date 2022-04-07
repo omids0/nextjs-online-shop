@@ -25,14 +25,14 @@ export default function MainPage() {
           value={userPhoneNum}
           onChange={(e) => setuserPhoneNum(e.target.value)}
         />
-        <Link href={`/login/${userPhoneNum}`} passHref>
-          <button
-            className="btn login-enter-btn"
-            disabled={userPhoneNum.length > 11 && "true"}
-          >
-            ورود
-          </button>
-        </Link>
+        {userPhoneNum.length >= 11 && (<Link href={`/login/${userPhoneNum}`} passHref>
+        <button
+          className="btn login-enter-btn"
+        >
+          ورود
+        </button>
+      </Link>)}
+        
       </div>
     </div>
   );

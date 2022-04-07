@@ -1265,6 +1265,37 @@ input:checked + .slider:before {
   border-radius:7px
 }
 
+.login-notfound-container{
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: var(--padding-small-size);
+  padding-top: 5rem
+}
+
+.login-notfound-container h2{
+  color: var(--lite-black-color);
+}
+
+.login-notfound-container p{
+  color: var(--lite-black-color);
+  margin: 5rem 0
+}
+
+.login-notfound-container form{
+  display: flex;
+  flex-direction: column;
+  max-width: 40rem;
+}
+.save-user-form{
+  margin: 1rem 0
+}
+.save-user-form-btn{
+  margin: 1rem 0;
+  background: green;
+  padding: 1rem;
+  color: white;
+  border-radius: 7px;
+}
 /* Safari */
 @-webkit-keyframes spin {
   0% {

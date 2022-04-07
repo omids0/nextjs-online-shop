@@ -1,5 +1,6 @@
 import React from "react";
 import UserFound from "../../components/login/UserFound";
+import UserNotFound from "../../components/login/UserNotFound";
 import Users from "../../models/Users";
 import db from "../../utils/db/mongoose";
 
@@ -7,7 +8,11 @@ export default function userLoged({ userPhoneNum, user }) {
   console.log(user);
   return (
     <div>
-      {user.length > 0 ? <UserFound user={user} /> : <div>user not found</div>}
+      {user.length > 0 ? (
+        <UserFound user={user} />
+      ) : (
+        <UserNotFound userPhoneNum={userPhoneNum} />
+      )}
     </div>
   );
 }
