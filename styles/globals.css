@@ -1299,7 +1299,7 @@ input:checked + .slider:before {
 
 .header-user-details{
   width: auto;
-  min-width: 10rem;
+  min-width: 16rem;
   max-width: 18rem;
   display: flex;
   justify-content: space-between;
@@ -1310,24 +1310,98 @@ input:checked + .slider:before {
 .header-userdata{
   color: black;
 }
-
 .header-userdata:hover .header-user-options{
   display: flex;
   position: absolute;
-  left: 2rem;
+  left: 6rem;
   z-index: 10;
-  width: 15rem;
-  min-height: 20rem;
+  width: 18rem;
+  min-height: 25rem;
   background: white;
   color: var(--lite-black-color);
   border: 1px solid #ddd;
   border-radius: 7px;
   padding: var(--padding-small-size)
 }
-
 .header-user-options-btn{
   font-size: 1.4rem
 }
+.basketdelivery-container{
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: var(--padding-small-size);
+  padding-top: 5rem;
+}
+.basketdelivery-userdata-empty-container{
+  margin: 2rem 0;
+  border-radius: 15px;
+  border: 2px solid gold;
+  padding: var(--padding-small-size);
+  box-shadow: 8px 8px 10px silver;
+}
+.basketdelivery-userdata-empty-container p{
+  color: var(--lite-black-color);
+  margin-bottom: 1rem
+}
+.basketdelivery-userdata-empty-container-btn{
+  background: goldenrod;
+  padding: .5rem;
+  border-radius: 7px;
+  margin: 1rem 0
+}
+.basketdelivery-userdata-container{
+  margin: 4rem 0;
+  border-bottom: 1px solid #ddd;
+}
+.basketdelivery-userdata-container h3{
+  color: var(--lite-black-color);
+}
+.basketdelivery-userdata-details{
+  padding: 3rem 2rem
+}
+.basketdelivery-userdata-p{
+  margin: 1rem 0 2.6rem;
+  background: whitesmoke;
+  max-width: 40rem;
+  font-weight: bold;
+}
+.basketdelivery-products-container{
+  margin: 5rem 0;
+  border-bottom: 1px solid #ddd;
+}
+.basketdelivery-products-container h3{
+  color: var(--lite-black-color);
+  margin-bottom: 4rem;
+}
+.basketdelivery-products-factor{
+  margin: 4rem 0;
+}
+.basketdelivery-products-factor h3{
+  margin: 1rem 0;
+  color: gold;
+  background: var(--navy-color);
+  max-width: 16rem;
+  padding: 1rem 2rem;
+}
+.basketdelivery-order-container{
+  margin-bottom: 4rem
+}
+.basketdelivery-order-container h3{
+  color: var(--lite-black-color);
+  margin-bottom: 3rem;
+}
+.basketdelivery-order-description{
+  width: 100%;
+}
+.basketdelivery-order-btn{
+  background: green;
+  margin-top: 4rem;
+  color: white;
+  padding:1rem;
+  border-radius: 7px;
+}
+
+
 /* Safari */
 @-webkit-keyframes spin {
   0% {
@@ -1357,6 +1431,9 @@ input:checked + .slider:before {
 }
 
 @media (max-width: 1000px) {
+  .header-user-details{
+    min-width: 10rem
+  }
   .first-slide-desktop {
     width: calc(100% - 10rem);
   }
