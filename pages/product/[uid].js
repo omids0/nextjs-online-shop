@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import React, { useEffect, useState } from "react";
+import React from "react";
 import AppLayout from "../../components/AppLayout";
 import db from "../../utils/db/mongoose";
 import Products from "../../models/Products";
