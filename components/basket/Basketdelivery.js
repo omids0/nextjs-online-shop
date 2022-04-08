@@ -34,6 +34,7 @@ export default function Basketdelivery() {
       inPost: false,
       deliverd: false,
       noteAccept: false,
+      factorFinalPrice
     };
     setloading(true);
     const response = await fetch("/api/orders/", {

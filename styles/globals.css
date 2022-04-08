@@ -1428,6 +1428,20 @@ input:checked + .slider:before {
 .order-table{
   margin: 4rem 0;
 }
+.btn-order-ok{
+  width: 10rem;
+  background: green;
+  color: white;
+  padding: .5rem 1rem;
+  border-radius: 7px;
+}
+.btn-order-wait{
+  width: 11rem;
+  background: red;
+  color: white;
+  padding: .5rem 1rem;
+  border-radius: 7px;
+}
 
 /* Safari */
 @-webkit-keyframes spin {
