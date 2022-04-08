@@ -16,6 +16,19 @@ export default function AdminPost() {
       .then((data) => setfetchOrders(data));
   };
 
+  async function confirmHandler(id, update) {
+    console.log("id", id);
+    console.log("update", update);
+    await fetch("/api/updateorder/", {
+      method: "POST",
+      body: JSON.stringify({ id, update }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    getOrders()
+  }
+
   return (
     <div className="adminpost-container">
       <h2>مدیریت مرسوله‌ها</h2>
@@ -72,13 +85,73 @@ export default function AdminPost() {
                     <td>{item.user.city}</td>
                     <td>{item.user.address}</td>
                     <td>{item.products.length}</td>
-                    <td>1000</td>
+                    <td>{item.factorFinalPrice}</td>
                     <td>{item.description}</td>
-                    <td>{item.confirmed ? "تایید شده" : "در انتظار تایید"}</td>
-                    <td>{item.sendToPost ? "تایید شده" : "در انتظار تایید"}</td>
-                    <td>{item.inPost ? "تایید شده" : "در انتظار تایید"}</td>
-                    <td>{item.deliverd ? "تایید شده" : "در انتظار تایید"}</td>
-                    <td>{item.noteAccept ? "تایید شده" : "در انتظار تایید"}</td>
+                    <td>
+                      {item.confirmed ? (
+                        <button className="btn btn-order-ok">تایید شده</button>
+                      ) : (
+                        <button
+                          className="btn btn-order-wait"
+                          onClick={() =>
+                            confirmHandler(
+                              item._id,
+                              'confirmed'
+                            )
+                          }
+                        >
+                          در انتظار تایید
+                        </button>
+                      )}
+                    </td>
+                    <td>
+                      {item.sendToPost ? (
+                        <button className="btn btn-order-ok">تایید شده</button>
+                      ) : (
+                        <button
+                          className="btn btn-order-wait"
+                          onClick={() => confirmHandler(item._id, 'sendToPost')}
+                        >
+                          در انتظار تایید
+                        </button>
+                      )}
+                    </td>
+                    <td>
+                      {item.inPost ? (
+                        <button className="btn btn-order-ok">تایید شده</button>
+                      ) : (
+                        <button
+                          className="btn btn-order-wait"
+                          onClick={() => confirmHandler(item._id, 'inPost')}
+                        >
+                          در انتظار تایید
+                        </button>
+                      )}
+                    </td>
+                    <td>
+                      {item.deliverd ? (
+                        <button className="btn btn-order-ok">تایید شده</button>
+                      ) : (
+                        <button
+                          className="btn btn-order-wait"
+                          onClick={() => confirmHandler(item._id, 'deliverd')}
+                        >
+                          در انتظار تایید
+                        </button>
+                      )}
+                    </td>
+                    <td>
+                      {item.noteAccept ? (
+                        <button className="btn btn-order-ok">تایید شده</button>
+                      ) : (
+                        <button
+                          className="btn btn-order-wait"
+                          onClick={() => confirmHandler(item._id, 'noteAccept')}
+                        >
+                          در انتظار تایید
+                        </button>
+                      )}
+                    </td>
                   </tr>
                 ))}
               </tbody>
