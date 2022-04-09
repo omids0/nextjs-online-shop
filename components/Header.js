@@ -132,6 +132,9 @@ export default function Header() {
             <div className="header-userdata">
               <p>{userdata[0].name}</p>
               <div className="header-user-options">
+                <Link href={`/user/${userdata[0]._id}`} passHref>
+                  <p className="header-user-options-btn">سفارشات من</p>
+                </Link>
                 <Link href="/admin" passHref>
                   <p className="header-user-options-btn">دسترسی ادمین</p>
                 </Link>
