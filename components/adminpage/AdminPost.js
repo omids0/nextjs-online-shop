@@ -5,6 +5,9 @@ export default function AdminPost() {
   const [filterCatgry, setfilterCatgry] = useState("");
   const [searchPost, setsearchPost] = useState("");
   const [fetchOrders, setfetchOrders] = useState([]);
+  const [loading, setloading] = useState(false);
+  const [loadOn, setloadOn] = useState("");
+  const [clickedId, setclickedId] = useState("");
 
   useEffect(() => {
     getOrders();
@@ -14,10 +17,16 @@ export default function AdminPost() {
     await fetch("/api/orders/")
       .then((response) => response.json())
       .then((data) => setfetchOrders(data));
+
+    setloadOn("");
+    setloading(false);
   };
 
   async function confirmHandler(id, update) {
-    
+    setloadOn(update);
+    setloading(true);
+    setclickedId(id);
+
     await fetch("/api/updateorder/", {
       method: "POST",
       body: JSON.stringify({ id, update }),
@@ -25,7 +34,7 @@ export default function AdminPost() {
         "Content-Type": "application/json",
       },
     });
-    getOrders()
+    getOrders();
   }
 
   return (
@@ -79,73 +88,160 @@ export default function AdminPost() {
                   <tr key={item._id}>
                     <td>{i + 1}</td>
                     <td>{item._id}</td>
-                    <td>{item.user.name}</td>
-                    <td>{item.user.phone}</td>
-                    <td>{item.user.city}</td>
-                    <td>{item.user.address}</td>
+                    <td>{item.user[0].name}</td>
+                    <td>{item.user[0].phone}</td>
+                    <td>{item.user[0].city}</td>
+                    <td>{item.user[0].address}</td>
                     <td>{item.products.length}</td>
-                    <td>{item.factorFinalPrice}</td>
+                    <td>{item.factorFinalPrice} t</td>
                     <td>{item.description}</td>
                     <td>
-                      {item.confirmed ? (
-                        <button className="btn btn-order-ok">تایید شده</button>
+                    
+                    {loading ? (
+                      item._id === clickedId && loadOn === "confirmed" ? (
+                        <button className="btn btn-order-wait">
+                          wait...
+                        </button>
+                      ) : item.confirmed ? (
+                        <button className="btn btn-order-ok">
+                          تایید شده
+                        </button>
                       ) : (
                         <button
                           className="btn btn-order-wait"
                           onClick={() =>
-                            confirmHandler(
-                              item._id,
-                              'confirmed'
-                            )
+                            confirmHandler(item._id, "confirmed")
                           }
                         >
                           در انتظار تایید
                         </button>
-                      )}
+                      )
+                    ) : item.confirmed ? (
+                      <button className="btn btn-order-ok">تایید شده</button>
+                    ) : (
+                      <button
+                        className="btn btn-order-wait"
+                        onClick={() => confirmHandler(item._id, "confirmed")}
+                      >
+                        در انتظار تایید
+                      </button>
+                    )}
                     </td>
                     <td>
-                      {item.sendToPost ? (
+                      {loading ? (
+                        item._id === clickedId && loadOn === "sendToPost" ? (
+                          <button className="btn btn-order-wait">
+                            wait...
+                          </button>
+                        ) : item.sendToPost ? (
+                          <button className="btn btn-order-ok">
+                            تایید شده
+                          </button>
+                        ) : (
+                          <button
+                            className="btn btn-order-wait"
+                            onClick={() =>
+                              confirmHandler(item._id, "sendToPost")
+                            }
+                          >
+                            در انتظار تایید
+                          </button>
+                        )
+                      ) : item.sendToPost ? (
                         <button className="btn btn-order-ok">تایید شده</button>
                       ) : (
                         <button
                           className="btn btn-order-wait"
-                          onClick={() => confirmHandler(item._id, 'sendToPost')}
+                          onClick={() => confirmHandler(item._id, "sendToPost")}
                         >
                           در انتظار تایید
                         </button>
                       )}
                     </td>
                     <td>
-                      {item.inPost ? (
+                      {loading ? (
+                        item._id === clickedId && loadOn === "inPost" ? (
+                          <button className="btn btn-order-wait">
+                            wait...
+                          </button>
+                        ) : item.inPost ? (
+                          <button className="btn btn-order-ok">
+                            تایید شده
+                          </button>
+                        ) : (
+                          <button
+                            className="btn btn-order-wait"
+                            onClick={() => confirmHandler(item._id, "inPost")}
+                          >
+                            در انتظار تایید
+                          </button>
+                        )
+                      ) : item.inPost ? (
                         <button className="btn btn-order-ok">تایید شده</button>
                       ) : (
                         <button
                           className="btn btn-order-wait"
-                          onClick={() => confirmHandler(item._id, 'inPost')}
+                          onClick={() => confirmHandler(item._id, "inPost")}
                         >
                           در انتظار تایید
                         </button>
                       )}
                     </td>
                     <td>
-                      {item.deliverd ? (
+                      {loading ? (
+                        item._id === clickedId && loadOn === "deliverd" ? (
+                          <button className="btn btn-order-wait">
+                            wait...
+                          </button>
+                        ) : item.deliverd ? (
+                          <button className="btn btn-order-ok">
+                            تایید شده
+                          </button>
+                        ) : (
+                          <button
+                            className="btn btn-order-wait"
+                            onClick={() => confirmHandler(item._id, "deliverd")}
+                          >
+                            در انتظار تایید
+                          </button>
+                        )
+                      ) : item.deliverd ? (
                         <button className="btn btn-order-ok">تایید شده</button>
                       ) : (
                         <button
                           className="btn btn-order-wait"
-                          onClick={() => confirmHandler(item._id, 'deliverd')}
+                          onClick={() => confirmHandler(item._id, "deliverd")}
                         >
                           در انتظار تایید
                         </button>
                       )}
                     </td>
                     <td>
-                      {item.noteAccept ? (
+                      {loading ? (
+                        item._id === clickedId && loadOn === "noteAccept" ? (
+                          <button className="btn btn-order-wait">
+                            wait...
+                          </button>
+                        ) : item.noteAccept ? (
+                          <button className="btn btn-order-ok">
+                            تایید شده
+                          </button>
+                        ) : (
+                          <button
+                            className="btn btn-order-wait"
+                            onClick={() =>
+                              confirmHandler(item._id, "noteAccept")
+                            }
+                          >
+                            در انتظار تایید
+                          </button>
+                        )
+                      ) : item.noteAccept ? (
                         <button className="btn btn-order-ok">تایید شده</button>
                       ) : (
                         <button
                           className="btn btn-order-wait"
-                          onClick={() => confirmHandler(item._id, 'noteAccept')}
+                          onClick={() => confirmHandler(item._id, "noteAccept")}
                         >
                           در انتظار تایید
                         </button>

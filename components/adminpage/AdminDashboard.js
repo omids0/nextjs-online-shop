@@ -60,26 +60,26 @@ export default function AdminDashboard() {
           <div className="admin-dashboard-division admin-dashboard-orders">
             <h3>سفارشات ارسال به پست</h3>
             <p>
-              {orders.filter((product) => product.sendToPost === true).length}{" "}
+              {orders.filter((product) => product.sendToPost === false).length}{" "}
               عدد
             </p>
           </div>
           <div className="admin-dashboard-division admin-dashboard-orders">
             <h3>سفارشات داخل پست</h3>
             <p>
-              {orders.filter((product) => product.inPost === true).length} عدد
+              {orders.filter((product) => product.inPost === false).length} عدد
             </p>
           </div>
           <div className="admin-dashboard-division admin-dashboard-orders">
             <h3>سفارشات تحویل داده شده</h3>
             <p>
-              {orders.filter((product) => product.deliverd === true).length} عدد
+              {orders.filter((product) => product.deliverd === false).length} عدد
             </p>
           </div>
           <div className="admin-dashboard-division admin-dashboard-orders">
             <h3>سفارشات مرجوعی</h3>
             <p>
-              {orders.filter((product) => product.noteAccept === true).length}{" "}
+              {orders.filter((product) => product.noteAccept === false).length}{" "}
               عدد
             </p>
           </div>
