@@ -36,9 +36,12 @@ export default function Basketdelivery() {
       noteAccept: false,
       factorFinalPrice
     };
+
     const update = 'addneworder';
+
     setloading(true);
-    const response = await fetch("/api/updateorder/", {
+
+    await fetch("/api/updateorder/", {
       method: "POST",
       body: JSON.stringify({ userOrder, update}),
       headers: { "Content-Type": "application/json" },

@@ -17,8 +17,7 @@ export default function AdminPost() {
   };
 
   async function confirmHandler(id, update) {
-    console.log("id", id);
-    console.log("update", update);
+    
     await fetch("/api/updateorder/", {
       method: "POST",
       body: JSON.stringify({ id, update }),
