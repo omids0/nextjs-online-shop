@@ -1244,52 +1244,52 @@ input:checked + .slider:before {
   max-width: 1024px;
   margin: 0 auto;
   padding: var(--padding-small-size);
-  padding-top: 5rem
+  padding-top: 5rem;
 }
 
-.login-welcome-container h2{
+.login-welcome-container h2 {
   color: var(--lite-black-color);
 }
 
-.login-welcome-container p{
+.login-welcome-container p {
   color: var(--lite-black-color);
-  margin: 5rem 0
+  margin: 5rem 0;
 }
 
-.login-welcome-btn{
+.login-welcome-btn {
   min-width: 20rem;
   background: red;
-  padding:1rem;
+  padding: 1rem;
   margin-top: 2rem;
   color: white;
-  border-radius:7px
+  border-radius: 7px;
 }
 
-.login-notfound-container{
+.login-notfound-container {
   max-width: 1024px;
   margin: 0 auto;
   padding: var(--padding-small-size);
-  padding-top: 5rem
+  padding-top: 5rem;
 }
 
-.login-notfound-container h2{
+.login-notfound-container h2 {
   color: var(--lite-black-color);
 }
 
-.login-notfound-container p{
+.login-notfound-container p {
   color: var(--lite-black-color);
-  margin: 5rem 0
+  margin: 5rem 0;
 }
 
-.login-notfound-container form{
+.login-notfound-container form {
   display: flex;
   flex-direction: column;
   max-width: 40rem;
 }
-.save-user-form{
-  margin: 1rem 0
+.save-user-form {
+  margin: 1rem 0;
 }
-.save-user-form-btn{
+.save-user-form-btn {
   margin: 1rem 0;
   background: green;
   padding: 1rem;
@@ -1297,20 +1297,17 @@ input:checked + .slider:before {
   border-radius: 7px;
 }
 
-.header-user-details{
+.header-user-details {
   width: auto;
   min-width: 16rem;
   max-width: 18rem;
   display: flex;
   justify-content: space-between;
 }
-.header-user-options{
+.header-user-options {
   display: none;
 }
-.header-userdata{
-  color: black;
-}
-.header-userdata:hover .header-user-options{
+.header-user-options:hover {
   display: flex;
   flex-direction: column;
   position: absolute;
@@ -1322,93 +1319,119 @@ input:checked + .slider:before {
   color: var(--lite-black-color);
   border: 1px solid #ddd;
   border-radius: 7px;
-  padding: var(--padding-small-size)
+  padding: var(--padding-small-size);
 }
-.header-user-options-btn{
-  font-size: 1.4rem
+.header-userdata {
+  color: black;
 }
-.basketdelivery-container{
+.header-userdata:hover .header-user-options {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: 6rem;
+  z-index: 10;
+  width: 18rem;
+  min-height: 25rem;
+  background: white;
+  color: var(--lite-black-color);
+  border: 1px solid #ddd;
+  border-radius: 7px;
+  padding: var(--padding-small-size);
+}
+.header-user-options-btn {
+  font-size: 1.2rem;
+  border-bottom: 1px solid #ddd;
+  padding: 0.8rem 0;
+  color: var(--lite-black-color);
+  font-weight: 600;
+  cursor: pointer;
+}
+.header-user-options-btn:hover {
+  color: black;
+  border-bottom: 1px solid silver;
+}
+.basketdelivery-container {
   max-width: 1024px;
   margin: 0 auto;
   padding: var(--padding-small-size);
   padding-top: 5rem;
 }
-.basketdelivery-userdata-empty-container{
+.basketdelivery-userdata-empty-container {
   margin: 2rem 0;
   border-radius: 15px;
   border: 2px solid gold;
   padding: var(--padding-small-size);
   box-shadow: 8px 8px 10px silver;
 }
-.basketdelivery-userdata-empty-container p{
+.basketdelivery-userdata-empty-container p {
   color: var(--lite-black-color);
-  margin-bottom: 1rem
+  margin-bottom: 1rem;
 }
-.basketdelivery-userdata-empty-container-btn{
+.basketdelivery-userdata-empty-container-btn {
   background: goldenrod;
-  padding: .5rem;
+  padding: 0.5rem;
   border-radius: 7px;
-  margin: 1rem 0
+  margin: 1rem 0;
 }
-.basketdelivery-userdata-container{
+.basketdelivery-userdata-container {
   margin: 4rem 0;
   border-bottom: 1px solid #ddd;
 }
-.basketdelivery-userdata-container h3{
+.basketdelivery-userdata-container h3 {
   color: var(--lite-black-color);
 }
-.basketdelivery-userdata-details{
-  padding: 3rem 2rem
+.basketdelivery-userdata-details {
+  padding: 3rem 2rem;
 }
-.basketdelivery-userdata-p{
+.basketdelivery-userdata-p {
   margin: 1rem 0 2.6rem;
   background: whitesmoke;
   max-width: 40rem;
   font-weight: bold;
 }
-.basketdelivery-products-container{
+.basketdelivery-products-container {
   margin: 5rem 0;
   border-bottom: 1px solid #ddd;
 }
-.basketdelivery-products-container h3{
+.basketdelivery-products-container h3 {
   color: var(--lite-black-color);
   margin-bottom: 4rem;
 }
-.basketdelivery-products-factor{
+.basketdelivery-products-factor {
   margin: 4rem 0;
 }
-.basketdelivery-products-factor h3{
+.basketdelivery-products-factor h3 {
   margin: 1rem 0;
   color: gold;
   background: var(--navy-color);
   max-width: 16rem;
   padding: 1rem 2rem;
 }
-.basketdelivery-order-container{
-  margin-bottom: 4rem
+.basketdelivery-order-container {
+  margin-bottom: 4rem;
 }
-.basketdelivery-order-container h3{
+.basketdelivery-order-container h3 {
   color: var(--lite-black-color);
   margin-bottom: 3rem;
 }
-.basketdelivery-order-description{
+.basketdelivery-order-description {
   width: 100%;
 }
-.basketdelivery-order-btn{
+.basketdelivery-order-btn {
   background: green;
   margin-top: 4rem;
   color: white;
-  padding:1rem;
+  padding: 1rem;
   border-radius: 7px;
 }
-.adminpost-container{
+.adminpost-container {
   padding-top: 3rem;
 }
-.adminpost-container h2{
+.adminpost-container h2 {
   color: var(--lite-black-color);
-  margin-bottom: 2rem
+  margin-bottom: 2rem;
 }
-.adminpost-filter-container{
+.adminpost-filter-container {
   width: 100%;
   min-height: 10rem;
   background: rgba(221, 160, 221, 0.2);
@@ -1421,25 +1444,25 @@ input:checked + .slider:before {
   justify-content: space-between;
   flex-wrap: wrap;
 }
-.adminpost-filter-input{
+.adminpost-filter-input {
   min-width: 30rem;
-  margin: 1rem
+  margin: 1rem;
 }
-.order-table{
+.order-table {
   margin: 4rem 0;
 }
-.btn-order-ok{
+.btn-order-ok {
   width: 10rem;
   background: green;
   color: white;
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
   border-radius: 7px;
 }
-.btn-order-wait{
+.btn-order-wait {
   width: 11rem;
   background: red;
   color: white;
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
   border-radius: 7px;
 }
 
@@ -1472,8 +1495,8 @@ input:checked + .slider:before {
 }
 
 @media (max-width: 1000px) {
-  .header-user-details{
-    min-width: 10rem
+  .header-user-details {
+    min-width: 10rem;
   }
   .first-slide-desktop {
     width: calc(100% - 10rem);

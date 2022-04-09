@@ -28,7 +28,7 @@ export default function Basketdelivery() {
     const userOrder = {
       user: userdata[0],
       products: basketdata,
-      description,
+      description: description ? description : "_",
       confirmed: false,
       sendToPost: false,
       inPost: false,
@@ -36,14 +36,15 @@ export default function Basketdelivery() {
       noteAccept: false,
       factorFinalPrice
     };
+    const update = 'addneworder';
     setloading(true);
-    const response = await fetch("/api/orders/", {
+    const response = await fetch("/api/updateorder/", {
       method: "POST",
-      body: JSON.stringify({ userOrder }),
+      body: JSON.stringify({ userOrder, update}),
       headers: { "Content-Type": "application/json" },
     })
       .then((response) => response.json())
-      .then((data) => alert(`${data.insertedId} شماره پیگیری :`));
+      .then((data) => alert(`شماره پیگیری ${data._id}`));
     window.location.href = "/";
     localStorage.removeItem('omidshopbasket')
   }
