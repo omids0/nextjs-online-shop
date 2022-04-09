@@ -204,6 +204,13 @@ thead {
   justify-content: center;
 }
 
+.components-container {
+  padding: var(--padding-small-size);
+  max-width: 1024px;
+  margin: 0 auto;
+  display: flex;
+}
+
 .product-form {
   display: flex;
   flex-direction: row;
@@ -1464,6 +1471,22 @@ input:checked + .slider:before {
   color: white;
   padding: 0.5rem 1rem;
   border-radius: 7px;
+}
+.ordersEmpty-basket{
+  font-size: 20rem;
+  color: blueviolet;
+}
+.ordersEmpty{
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 5%;
+}
+.ordersEmpty h3{
+  color: var(--lite-black-color);
+  margin-bottom: 2rem;
 }
 
 /* Safari */

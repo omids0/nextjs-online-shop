@@ -3,16 +3,15 @@ import React, { useEffect } from "react";
 import AppLayout from "../../components/AppLayout";
 import db from "../../utils/db/mongoose";
 import Orders from "../../models/Orders";
+import Userorders from "../../components/user/Userorders";
+import UserOrdersEmpty from "../../components/user/UserOrdersEmpty";
 
 export default function userorder({ userorder, myOrders }) {
-  useEffect(() => {
-    console.log(myOrders);
-  }, [myOrders]);
 
   return (
-    <AppLayout>
-      orders: {userorder}
-      <h1>{myOrders.length}</h1>
+    <AppLayout title='Your Orders'>
+      {myOrders.length > 0 && (<Userorders orders={myOrders} />)}
+      {myOrders.length === 0 && (<UserOrdersEmpty />)}
     </AppLayout>
   );
 }

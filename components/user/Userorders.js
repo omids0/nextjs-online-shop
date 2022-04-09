@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function Userorders({userID}) {
+export default function Userorders({orders}) {
   return (
     <div>
-      user: {userID}
+      your orders: {orders.length}
     </div>
   )
 }
