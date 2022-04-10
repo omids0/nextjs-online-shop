@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from "react";
 import AppLayout from "../AppLayout";
-import Link from "next/Link";
+import Link from "next/link";
 
 export default function UserFound({ user }) {
   let username = localStorage.getItem("omidshopuser")
