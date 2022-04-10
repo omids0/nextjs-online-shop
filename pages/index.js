@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import AppLayout from "../components/AppLayout";
 import Homepage from "../components/Homepage";
 import { useDispatch } from "react-redux";
