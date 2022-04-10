@@ -1477,6 +1477,13 @@ input:checked + .slider:before {
   padding: 0.5rem 1rem;
   border-radius: 7px;
 }
+.btn-order-waiting {
+  width: 11rem;
+  background: lightblue;
+  color: black;
+  padding: 0.5rem 1rem;
+  border-radius: 7px;
+}
 .ordersEmpty-basket {
   font-size: 20rem;
   color: blueviolet;

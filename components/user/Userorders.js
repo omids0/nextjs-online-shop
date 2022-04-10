@@ -1,7 +1,6 @@
 import React from "react";
 
 export default function Userorders({ orders }) {
-  console.log(orders);
   return (
     <div className="components-container user-orders-clumn">
       <div className="user-orders-list-container">

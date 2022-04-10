@@ -99,7 +99,7 @@ export default function AdminPost() {
                     
                     {loading ? (
                       item._id === clickedId && loadOn === "confirmed" ? (
-                        <button className="btn btn-order-wait">
+                        <button className="btn btn-order-waiting">
                           wait...
                         </button>
                       ) : item.confirmed ? (
@@ -130,7 +130,7 @@ export default function AdminPost() {
                     <td>
                       {loading ? (
                         item._id === clickedId && loadOn === "sendToPost" ? (
-                          <button className="btn btn-order-wait">
+                          <button className="btn btn-order-waiting">
                             wait...
                           </button>
                         ) : item.sendToPost ? (
@@ -161,7 +161,7 @@ export default function AdminPost() {
                     <td>
                       {loading ? (
                         item._id === clickedId && loadOn === "inPost" ? (
-                          <button className="btn btn-order-wait">
+                          <button className="btn btn-order-waiting">
                             wait...
                           </button>
                         ) : item.inPost ? (
@@ -190,7 +190,7 @@ export default function AdminPost() {
                     <td>
                       {loading ? (
                         item._id === clickedId && loadOn === "deliverd" ? (
-                          <button className="btn btn-order-wait">
+                          <button className="btn btn-order-waiting">
                             wait...
                           </button>
                         ) : item.deliverd ? (
@@ -219,7 +219,7 @@ export default function AdminPost() {
                     <td>
                       {loading ? (
                         item._id === clickedId && loadOn === "noteAccept" ? (
-                          <button className="btn btn-order-wait">
+                          <button className="btn btn-order-waiting">
                             wait...
                           </button>
                         ) : item.noteAccept ? (
