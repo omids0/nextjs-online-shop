@@ -1,5 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { getAllProductsAction } from "../redux/actions/productActions";
 import Aboutsite from "./homepage/Aboutsite";
 import Category from "./homepage/Category";
 import Firstslide from "./homepage/Firstslide";
@@ -14,10 +16,16 @@ export default function Homepage() {
   const [products, setproducts] = useState([]);
   const [loading, setloading] = useState(true);
 
+  const dispatch = useDispatch();
+
   //useEffect
   useEffect(() => {
     getAllProducts();
   }, []);
+
+  useEffect(() => {
+    dispatch(getAllProductsAction(products));
+  }, [products]);
 
   //functions
   const getAllProducts = async () => {

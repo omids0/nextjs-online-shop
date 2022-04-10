@@ -6,6 +6,7 @@ import { getUserHistoryBasketAction } from "../redux/actions/basketActions";
 
 export default function Header() {
   const basket = useSelector((state) => state.addToBasketReducer.basketItems);
+  const productsState = useSelector(state => state.productsReducer.products)
 
   const dispatch = useDispatch();
 
