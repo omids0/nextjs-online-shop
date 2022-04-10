@@ -6,12 +6,14 @@ import { getUserHistoryBasketAction } from "../redux/actions/basketActions";
 
 export default function Header() {
   const basket = useSelector((state) => state.addToBasketReducer.basketItems);
-  const productsState = useSelector(state => state.productsReducer.products)
+  const productsstate = useSelector((state) => state.productsReducer.products);
 
   const dispatch = useDispatch();
 
   const [hamburMenu, sethamburMenu] = useState(false);
   const [userdata, setuserdata] = useState("");
+  const [search, setsearch] = useState("");
+  const [products, setproducts] = useState([]);
 
   useEffect(() => {
     const basket = localStorage.getItem("omidshopbasket")
@@ -25,6 +27,10 @@ export default function Header() {
 
     dispatch(getUserHistoryBasketAction(basket));
   }, []);
+
+  useEffect(() => {
+    setproducts(productsstate[1]);
+  }, [productsstate]);
 
   const showHamburgerMenu = () => {
     sethamburMenu(!hamburMenu);
@@ -84,11 +90,32 @@ export default function Header() {
           />
         </Link>
         <div className="desktop-header">
-          <input
-            type="text"
-            className="input desktop-search"
-            placeholder="جستجو"
-          />
+          <div className="desktop-search-div">
+            <input
+              type="text"
+              className="input desktop-search"
+              placeholder="جستجو"
+              value={search}
+              onChange={(e) => setsearch(e.target.value)}
+            />
+            {search.length > 0 && (
+              <div className="search-result-container">
+                {products
+                  .filter((product) =>
+                    product.name.toLowerCase().includes(search.toLowerCase())
+                  )
+                  .map((item) => (
+                    <div key={item._id}>
+                      <Link href={`/product/${item._id}`} passHref>
+                        <div className="header-search-item">
+                          <p>{item.name}</p>
+                        </div>
+                      </Link>
+                    </div>
+                  ))}
+              </div>
+            )}
+          </div>
           <div className="header-user-details">
             {userdata.length > 0 ? (
               <div className="header-userdata">
@@ -126,7 +153,32 @@ export default function Header() {
       </div>
       <div className="header-second-section">
         <div className="header-part-section1">
-          <input className="header-search" type="text" placeholder="جستجو" />
+          <div>
+            <input
+              className="header-search"
+              type="text"
+              placeholder="جستجو"
+              value={search}
+              onChange={(e) => setsearch(e.target.value)}
+            />
+            {search.length > 0 && (
+              <div className="search-result-container">
+                {products
+                  .filter((product) =>
+                    product.name.toLowerCase().includes(search.toLowerCase())
+                  )
+                  .map((item) => (
+                    <div key={item._id}>
+                      <Link href={`/product/${item._id}`} passHref>
+                        <div className="header-search-item">
+                          <p>{item.name}</p>
+                        </div>
+                      </Link>
+                    </div>
+                  ))}
+              </div>
+            )}
+          </div>
         </div>
         <div className="header-user-details">
           {userdata.length > 0 ? (

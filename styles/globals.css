@@ -810,6 +810,11 @@ input:checked + .slider:before {
   border: 1px solid silver;
 }
 
+.desktop-search-div{
+  width: 100%;
+  max-width: 50rem;
+}
+
 .cart-btn {
   background: none;
 }
@@ -1584,6 +1589,30 @@ input:checked + .slider:before {
   background: rgba(137, 43, 226, 0.11);
   padding: 1rem;
   border-radius: 7px;
+}
+.search-result-container{
+  position: absolute;
+  top: 50;
+  z-index: 1;
+  background: white;
+  border: 1px solid silver;
+  border-radius: 7px;
+  min-width: 30rem;
+  max-width: 40rem;
+  min-height: 5rem;
+  color: black;
+  padding: 1rem;
+}
+.header-search-item{
+  border-bottom: 1px solid rgba(192, 192, 192, 0.412);
+  padding: .8rem 0;
+  margin-bottom: 1rem;
+  color: var(--lite-black-color);
+  cursor: pointer;
+}
+.header-search-item:hover{
+  color: black;
+  border-bottom: 1px solid rgba(192, 192, 192, 0.7);
 }
 /* Safari */
 @-webkit-keyframes spin {
