@@ -1652,10 +1652,19 @@ input:checked + .slider:before {
   display: flex;
   flex-direction: column;
   max-width: 40rem;
+  margin: 5rem 0;
 }
 
-.userinfo-form > input {
+.userinfo-form > input,select {
   margin: 1rem 0 2rem
+}
+
+.userinfo-form > button{
+  background-color: green;
+  padding: .5rem;
+  border-radius: 7px;
+  color: whitesmoke;
+  margin: 2rem 0;
 }
 
 /* Safari */

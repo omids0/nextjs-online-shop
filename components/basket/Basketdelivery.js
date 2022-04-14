@@ -20,7 +20,9 @@ export default function Basketdelivery() {
       ? JSON.parse(localStorage.getItem("omidshopuser"))
       : [];
     setuserdata(userdatas);
-    dispatch(saveUserInfoAction(userdatas))
+    if(userdatas.length > 0) {
+      dispatch(saveUserInfoAction(userdatas))
+    }
 
     const basket = localStorage.getItem("omidshopbasket")
       ? JSON.parse(localStorage.getItem("omidshopbasket"))

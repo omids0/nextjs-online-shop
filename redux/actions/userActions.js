@@ -1,5 +1,3 @@
-export const saveUserInfoAction = (userinfo) => (dispatch, getState) => {
+export const saveUserInfoAction = (userinfo) => (dispatch) => {
       dispatch({ type: "SAVE_USER_INFO", payload: userinfo})
-      const userstate = getState().userReducers.userinfo
-      localStorage.setItem('omidshopuser', JSON.stringify(userstate))
 }

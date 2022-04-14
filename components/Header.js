@@ -72,9 +72,11 @@ export default function Header() {
               <Link href="/admin" passHref>
                 <p>دسترسی ادمین</p>
               </Link>
-              <Link href="/login" passHref>
-                <p>ورود یا ثبت نام</p>
-              </Link>
+              {!userdata.length > 0 && (
+                <Link href="/login" passHref>
+                  <p>ورود یا ثبت نام</p>
+                </Link>
+              )}
               <p>فرصت های شغلی</p>
               <Link href="/about" passHref>
                 <p>درباره سایت</p>
@@ -184,7 +186,7 @@ export default function Header() {
         <div className="header-user-details">
           {userdata.length > 0 ? (
             <div className="header-userdata">
-              <p>{userdata[0].name}</p>
+              <p>{userdata[userdata.length - 1].name}</p>
               <div className="header-user-options">
                 <Link href={`/user/${userdata[0]._id}`} passHref>
                   <p className="header-user-options-btn">سفارشات من</p>
