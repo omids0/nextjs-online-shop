@@ -448,6 +448,7 @@ input:checked + .slider:before {
   max-height: 30rem;
   margin: 5rem 1.8rem;
   border-radius: 15px;
+  cursor: pointer;
 }
 
 .each-product-item-inner {
@@ -455,7 +456,7 @@ input:checked + .slider:before {
   border-radius: 15px;
   width: 100%;
   height: 100%;
-  box-shadow: 2px 7px 10px #999;
+  box-shadow: 2px 8px 15px #999;
 }
 
 .each-product-item-img {
@@ -509,9 +510,10 @@ input:checked + .slider:before {
   min-height: 18rem;
   max-height: 18rem;
   background: none;
-  margin: 1.6rem var(--padding-small-size);
+  margin: 4rem var(--padding-small-size);
   border-radius: 7px;
   box-shadow: 3px 1px 10px silver;
+  cursor: pointer;
 }
 
 .most-sales-list-child-img {
@@ -574,6 +576,9 @@ input:checked + .slider:before {
   display: flex;
   margin-right: 3rem;
 }
+.each-off-product:first-child{
+  border-radius: 0 1.6rem 1.6rem 0;
+}
 
 .each-off-product {
   display: flex;
@@ -587,6 +592,7 @@ input:checked + .slider:before {
   margin: 1rem 0.5rem;
   padding: 1rem;
   align-items: center;
+  cursor: pointer;
 }
 
 .each-off-product-image {
@@ -651,6 +657,7 @@ input:checked + .slider:before {
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 
 .first-slide-body-right {
