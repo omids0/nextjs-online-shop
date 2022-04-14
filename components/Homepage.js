@@ -1,7 +1,8 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { getAllProductsAction } from "../redux/actions/productActions";
+import { productsReducer } from "../redux/reducers/productReducer";
 import Aboutsite from "./homepage/Aboutsite";
 import Category from "./homepage/Category";
 import Firstslide from "./homepage/Firstslide";
@@ -15,6 +16,7 @@ export default function Homepage() {
   //state
   const [products, setproducts] = useState([]);
   const [loading, setloading] = useState(true);
+  const productsState = useSelector((state) => state.productsReducer.products);
 
   const dispatch = useDispatch();
 
@@ -29,12 +31,17 @@ export default function Homepage() {
 
   //functions
   const getAllProducts = async () => {
-    const response = await fetch("/api/products")
-      .then((response) => response.json())
-      .then((data) => {
-        setproducts(data);
-        setloading(!loading);
-      });
+    if (productsState.length > 0) {
+      setproducts(productsState[productsState.length - 1]);
+      setloading(!loading);
+    } else {
+      const response = await fetch("/api/products")
+        .then((response) => response.json())
+        .then((data) => {
+          setproducts(data);
+          setloading(!loading);
+        });
+    }
   };
 
   return (
