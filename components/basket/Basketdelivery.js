@@ -34,22 +34,22 @@ export default function Basketdelivery() {
       inPost: false,
       deliverd: false,
       noteAccept: false,
-      factorFinalPrice
+      factorFinalPrice,
     };
 
-    const update = 'addneworder';
+    const update = "addneworder";
 
     setloading(true);
 
     await fetch("/api/updateorder/", {
       method: "POST",
-      body: JSON.stringify({ userOrder, update}),
+      body: JSON.stringify({ userOrder, update }),
       headers: { "Content-Type": "application/json" },
     })
       .then((response) => response.json())
       .then((data) => alert(`شماره پیگیری ${data._id}`));
     window.location.href = "/";
-    localStorage.removeItem('omidshopbasket')
+    localStorage.removeItem("omidshopbasket");
   }
 
   return (
@@ -93,7 +93,9 @@ export default function Basketdelivery() {
                 {userdata[0].postCode}
               </p>
             </label>
-            <button className="btn btn-edit">ویرایش</button>
+            <Link href="/basket/userinfo" passHref>
+              <button className="btn edit-user-info">ویرایش اطلاعات</button>
+            </Link>
           </div>
         </div>
       )}
@@ -142,7 +144,7 @@ export default function Basketdelivery() {
           <button
             className="btn basketdelivery-order-btn"
             onClick={saveOrderHandler}
-            disabled={loading && 'false'}
+            disabled={loading && "false"}
           >
             {loading ? "لطفا صبر کنید.." : "تایید و پرداخت"}
           </button>

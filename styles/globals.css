@@ -58,6 +58,7 @@ label {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: gold;
+  cursor: pointer;
 }
 
 .link {
@@ -1629,6 +1630,12 @@ input:checked + .slider:before {
 .header-search-item:hover{
   color: black;
   border-bottom: 1px solid rgba(192, 192, 192, 0.7);
+}
+.edit-user-info{
+  background-color: #2196f3;
+  color: whitesmoke;
+  padding: .5rem var(--padding-small-size);
+  border-radius: 7px;
 }
 /* Safari */
 @-webkit-keyframes spin {
