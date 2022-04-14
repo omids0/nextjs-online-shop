@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { saveUserInfoAction } from "../../redux/actions/userActions";
 
 export default function Basketdelivery() {
   const basket = useSelector((state) => state.addToBasketReducer.basketItems);
 
   let factorFinalPrice = basket.reduce((c, x) => c + x.total_price, 0);
+
+  const dispatch = useDispatch();
 
   const [userdata, setuserdata] = useState([]);
   const [basketdata, setbasketdata] = useState([]);
@@ -17,6 +20,7 @@ export default function Basketdelivery() {
       ? JSON.parse(localStorage.getItem("omidshopuser"))
       : [];
     setuserdata(userdatas);
+    dispatch(saveUserInfoAction(userdatas))
 
     const basket = localStorage.getItem("omidshopbasket")
       ? JSON.parse(localStorage.getItem("omidshopbasket"))

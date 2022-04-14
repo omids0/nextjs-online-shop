@@ -3,10 +3,12 @@ import { composeWithDevTools } from "redux-devtools-extension";
 import thunk from "redux-thunk";
 import { addToBasketReducer } from "./reducers/basketReducers";
 import { productsReducer } from "./reducers/productReducer";
+import { userReducers } from "./reducers/userReducers";
 
 const finalReducers = combineReducers({
   addToBasketReducer: addToBasketReducer,
   productsReducer: productsReducer,
+  userReducers: userReducers
 });
 
 const initialState = {};

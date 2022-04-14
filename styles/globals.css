@@ -1637,6 +1637,27 @@ input:checked + .slider:before {
   padding: .5rem var(--padding-small-size);
   border-radius: 7px;
 }
+
+.userinfo-container{
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: var(--padding-small-size);
+}
+
+.userinfo-container h2{
+  color: var(--lite-black-color);
+  margin: 2rem 0;
+}
+.userinfo-form{
+  display: flex;
+  flex-direction: column;
+  max-width: 40rem;
+}
+
+.userinfo-form > input {
+  margin: 1rem 0 2rem
+}
+
 /* Safari */
 @-webkit-keyframes spin {
   0% {
