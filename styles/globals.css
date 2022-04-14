@@ -39,8 +39,8 @@ label {
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 1.2rem;
+  height: 1rem;
 }
 
 /* Track */
@@ -51,13 +51,13 @@ label {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 217, 0, 0.7);
+  background: rgba(221, 160, 221, 0.5);
   border-radius: 10px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--plum-color);
+  background: gold;
 }
 
 .link {
